@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flights to Detroit, Nov 11-16, 2026: four options compared</title>
+<meta name="description" content="Four flight options from the Bay Area to Detroit (DTW), Nov 11-16, 2026, with per-person and two-person totals, airports, times and stops.">
+<meta property="og:title" content="Flights to Detroit, Nov 11-16, 2026: four options compared">
+<meta property="og:description" content="SFO, SJC or OAK to DTW. Per-person and total-for-two prices, times, stops, and which fares could use SkyBridge miles.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E1A2B'/%3E%3Cpath d='M10 36 54 14 40 52 31 38z' fill='%23FFC72C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1A2B;
+  --mist:#E9EDF2;
+  --paper:#FFFFFF;
+  --yellow:#FFC72C;
+  --blue:#1747C9;
+  --red:#A4210F;
+  --muted:#46546A;
+  --line:#C3CCD8;
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--mist);
+  color:var(--ink);
+  font-family:var(--display);
+  font-size:1.0625rem;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+.top{
+  background:var(--ink);
+  color:var(--mist);
+  font-family:var(--mono);
+  font-size:.8125rem;
+}
+.top .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1.5rem;padding-block:.65rem}
+.top b{color:var(--yellow);font-weight:500}
+
+.hero{padding-block:clamp(2rem,5vw,4.5rem) clamp(2rem,4vw,3.5rem)}
+.hero-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+h1{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(2.75rem,10.5vw,6.5rem);
+  line-height:.92;
+  letter-spacing:-.035em;
+  font-variation-settings:"opsz" 96;
+  overflow-wrap:break-word;
+}
+.lede{
+  margin:1.25rem 0 0;
+  max-width:34rem;
+  font-size:clamp(1.0625rem,2.4vw,1.25rem);
+  color:var(--muted);
+}
+.lede strong{color:var(--ink);font-weight:700}
+.facts{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin:1.5rem 0 0;padding:0;list-style:none;
+  font-family:var(--mono);font-size:.875rem;
+}
+.facts li{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:.35rem .7rem;
+  border-radius:3px;
+}
+.cta{
+  display:inline-block;
+  margin-top:1.5rem;
+  background:var(--yellow);
+  color:var(--ink);
+  font-weight:700;
+  text-decoration:none;
+  padding:.85rem 1.4rem;
+  border:2px solid var(--ink);
+  border-radius:3px;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+
+.chart{
+  background:var(--paper);
+  border:2px solid var(--ink);
+  padding:1.25rem 1.25rem 1rem;
+  border-radius:4px;
+}
+.chart h2{
+  margin:0 0 .25rem;
+  font-size:1.125rem;
+  font-weight:700;
+}
+.chart .sub{margin:0 0 1rem;font-size:.9375rem;color:var(--muted)}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:.85rem}
+.rows a{display:block;text-decoration:none;padding:.15rem 0}
+.rows a:hover .name{text-decoration:underline}
+.rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;margin-bottom:.3rem}
+.name{font-weight:500;font-size:.9375rem;line-height:1.25}
+.name code{font-family:var(--mono);font-weight:600;font-size:.875rem;margin-right:.35rem}
+.name em{font-style:normal;font-family:var(--mono);font-size:.75rem;color:var(--red);font-weight:600;margin-left:.35rem;white-space:nowrap}
+.val{font-family:var(--mono);font-weight:600;font-size:1rem;white-space:nowrap}
+.track{height:14px;background:#E3E8EF;border-radius:2px;overflow:hidden}
+.bar{
+  height:100%;
+  width:var(--w);
+  background:var(--ink);
+  transform-origin:left center;
+  animation:grow .9s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:calc(var(--i) * 120ms + 150ms);
+}
+.bar.sky{background:var(--blue)}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.legend{
+  display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;
+  margin:1rem 0 0;padding-top:.75rem;border-top:1px solid var(--line);
+  font-size:.875rem;color:var(--muted);
+}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:2px;margin-right:.4rem;vertical-align:-1px}
+
+.options{padding-block:1rem clamp(2.5rem,5vw,4rem)}
+.options > .wrap > h2,.miles h2,.notes h2{
+  margin:0 0 .35rem;
+  font-size:clamp(1.75rem,5vw,2.5rem);
+  letter-spacing:-.025em;
+  line-height:1.05;
+  font-weight:800;
+}
+.options .intro{margin:0 0 1.75rem;color:var(--muted);max-width:40rem}
+.cards{display:grid;gap:1.25rem}
+.pass{
+  display:grid;
+  grid-template-columns:1fr;
+  background:var(--paper);
+  border:2px solid var(--ink);
+  border-radius:4px;
+  scroll-margin-top:1rem;
+}
+.stub{
+  padding:1.1rem 1.25rem;
+  background:var(--ink);
+  color:var(--mist);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:.2rem 1rem;
+}
+.stub .n{
+  grid-row:span 2;
+  font-weight:800;
+  font-size:3.25rem;
+  line-height:1;
+  color:var(--yellow);
+  letter-spacing:-.04em;
+}
+.stub .air{font-weight:700;font-size:1.25rem;line-height:1.1}
+.stub .type{font-family:var(--mono);font-size:.8125rem;color:#C9D3E0}
+.legs{padding:1.25rem;display:grid;gap:1rem;align-content:start}
+.badges{display:flex;flex-wrap:wrap;gap:.4rem}
+.b{
+  font-family:var(--mono);
+  font-size:.8125rem;
+  font-weight:600;
+  padding:.2rem .55rem;
+  border-radius:3px;
+  border:1.5px solid var(--ink);
+}
+.b.non{background:var(--ink);color:var(--paper)}
+.b.stop{background:var(--yellow)}
+.b.cheap{background:var(--yellow)}
+.b.fee{border-color:var(--red);color:var(--red);background:#FDEEEA}
+.b.mile{border-color:var(--blue);color:var(--blue)}
+.leg{
+  display:grid;
+  grid-template-columns:3.5rem 1fr;
+  gap:.25rem .75rem;
+  align-items:baseline;
+  padding-top:.85rem;
+  border-top:1px dashed var(--line);
+}
+.leg .dir{font-family:var(--mono);font-size:.8125rem;color:var(--muted);font-weight:500}
+.leg .when{display:flex;flex-wrap:wrap;gap:.1rem 1rem;align-items:baseline}
+.leg .day{font-weight:700;font-size:1.1875rem}
+.leg .time{font-family:var(--mono);font-weight:600;font-size:1.1875rem}
+.leg .route{grid-column:2;font-family:var(--mono);font-size:.9375rem;color:var(--muted)}
+.leg .route b{color:var(--ink);font-weight:600}
+.take{margin:0;color:var(--muted);font-size:.9688rem}
+.take strong{color:var(--ink)}
+.fare{
+  padding:1.25rem;
+  border-top:2px dashed var(--ink);
+  background:#F6F8FB;
+  display:grid;
+  gap:.15rem;
+  align-content:center;
+}
+.fare .pp{font-family:var(--mono);font-weight:600;font-size:clamp(2.5rem,9vw,3.25rem);line-height:1;letter-spacing:-.04em}
+.fare .lbl{font-size:.9375rem;color:var(--muted)}
+.fare .two{font-family:var(--mono);font-weight:600;font-size:1.125rem;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--line)}
+.fare .two small{display:block;font-family:var(--display);font-weight:400;font-size:.9375rem;color:var(--muted)}
+
+.miles{
+  background:var(--blue);
+  color:#fff;
+  padding-block:clamp(2.25rem,5vw,3.5rem);
+}
+.miles .wrap{display:grid;gap:1.25rem;max-width:1120px}
+.miles p{margin:0;max-width:40rem;font-size:1.1875rem}
+.miles .pillrow{display:flex;flex-wrap:wrap;gap:.6rem}
+.miles .pillrow a{
+  background:#fff;color:var(--blue);
+  font-weight:700;text-decoration:none;
+  padding:.55rem 1rem;border-radius:3px;
+}
+.miles .pillrow a:hover{background:var(--yellow);color:var(--ink)}
+.miles .pillrow a:focus-visible{outline-color:#fff}
+.miles .small{font-size:.9375rem;color:#E0E8FF}
+
+.notes{padding-block:clamp(2.5rem,5vw,4rem)}
+.notes ul{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:0;border-top:2px solid var(--ink)}
+.notes li{
+  padding:1rem 0;
+  border-bottom:1px solid var(--line);
+  display:grid;gap:.15rem;
+}
+.notes li b{font-size:1.125rem}
+.notes li span{color:var(--muted)}
+
+footer{
+  background:var(--ink);color:#C9D3E0;
+  font-family:var(--mono);font-size:.8125rem;
+  padding-block:1.5rem;
+}
+footer p{margin:0 0 .35rem}
+footer p:last-child{margin:0}
+
+@media (min-width:760px){
+  .hero-grid{grid-template-columns:1.1fr 1fr;align-items:end;gap:3rem}
+  .chart{padding:1.5rem}
+  .pass{grid-template-columns:190px 1fr 230px}
+  .stub{
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;
+    gap:1rem;padding:1.25rem;
+    border-right:2px dashed var(--yellow);
+  }
+  .stub .n{font-size:4.5rem}
+  .fare{border-top:0;border-left:2px dashed var(--ink)}
+  .legs{padding:1.5rem}
+  .miles .wrap{grid-template-columns:1fr auto;align-items:end;gap:2rem}
+  .notes li{grid-template-columns:16rem 1fr;gap:1.5rem}
+}
+@media (min-width:1000px){
+  .pass{grid-template-columns:210px 1fr 260px}
+}
+@media (max-width:400px){
+  .wrap{width:min(1120px,100% - 2rem)}
+  .leg{grid-template-columns:1fr}
+  .leg .route{grid-column:1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bar{animation:none}
+  .cta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <span>Bay Area to <b>DTW</b></span>
+    <span>Trip window: Nov 11-16, 2026</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Four ways to Detroit</h1>
+      <p class="lede">Tori, here are the flights from the FareHound alert. Fares are <strong>per person, roundtrip</strong>, and each one shows the total for the two of us.</p>
+      <ul class="facts">
+        <li>3 Bay Area airports</li>
+        <li>Nov 11-16, 2026</li>
+        <li>2 travelers</li>
+      </ul>
+      <a class="cta" href="#options">Compare the four options</a>
+    </div>
+
+    <section class="chart" aria-labelledby="chart-h">
+      <h2 id="chart-h">Total for two, cheapest first</h2>
+      <p class="sub">Tap a row to jump to that flight.</p>
+      <ol class="rows">
+        <li>
+          <a href="#opt3">
+            <div class="rowtop"><span class="name"><code>OAK</code>Zipjet<em>bags extra</em></span><span class="val">$428</span></div>
+            <div class="track"><div class="bar" style="--w:40.5%;--i:0"></div></div>
+          </a>
+        </li>
+        <li>
+          <a href="#opt2">
+            <div class="rowtop"><span class="name"><code>SJC</code>Lakeshore, 1 stop</span><span class="val">$662</span></div>
+            <div class="track"><div class="bar" style="--w:62.6%;--i:1"></div></div>
+          </a>
+        </li>
+        <li>
+          <a href="#opt1">
+            <div class="rowtop"><span class="name"><code>SFO</code>SkyBridge, leaves Nov 12</span><span class="val">$972</span></div>
+            <div class="track"><div class="bar sky" style="--w:91.9%;--i:2"></div></div>
+          </a>
+        </li>
+        <li>
+          <a href="#opt4">
+            <div class="rowtop"><span class="name"><code>SFO</code>SkyBridge, leaves Nov 13</span><span class="val">$1,058</span></div>
+            <div class="track"><div class="bar sky" style="--w:100%;--i:3"></div></div>
+          </a>
+        </li>
+      </ol>
+      <p class="legend">
+        <span><i style="background:var(--blue)"></i>SkyBridge, could use miles</span>
+        <span><i style="background:var(--ink)"></i>Cash only</span>
+      </p>
+    </section>
+  </div>
+</header>
+
+<main>
+<section class="options" id="options" aria-labelledby="opt-h">
+  <div class="wrap">
+    <h2 id="opt-h">The options, in the order from the alert</h2>
+    <p class="intro">Each card shows where we fly from, when we leave, when we come home, and what it costs.</p>
+
+    <div class="cards">
+
+      <article class="pass" id="opt1">
+        <div class="stub">
+          <span class="n">1</span>
+          <span class="air">SkyBridge</span>
+          <span class="type">SFO to DTW</span>
+        </div>
+        <div class="legs">
+          <div class="badges">
+            <span class="b non">Nonstop both ways</span>
+            <span class="b mile">Could use miles</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Out</span>
+            <span class="when"><span class="day">Thu Nov 12</span><span class="time">8:26am</span></span>
+            <span class="route"><b>SFO</b> San Francisco to <b>DTW</b> Detroit</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Back</span>
+            <span class="when"><span class="day">Mon Nov 16</span><span class="time">8:15am</span></span>
+            <span class="route"><b>DTW</b> Detroit to <b>SFO</b> San Francisco</span>
+          </div>
+          <p class="take"><strong>Four nights in Detroit.</strong> Nonstop both ways, and $43 per person less than option 4 for the same flight home.</p>
+        </div>
+        <div class="fare">
+          <span class="pp">$486</span>
+          <span class="lbl">per person, roundtrip</span>
+          <span class="two">$972<small>total for 2</small></span>
+        </div>
+      </article>
+
+      <article class="pass" id="opt2">
+        <div class="stub">
+          <span class="n">2</span>
+          <span class="air">Lakeshore Airlines</span>
+          <span class="type">SJC to DTW</span>
+        </div>
+        <div class="legs">
+          <div class="badges">
+            <span class="b stop">1 stop via DEN</span>
+            <span class="b">Cash only</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Out</span>
+            <span class="when"><span class="day">Wed Nov 11</span><span class="time">7:05am</span></span>
+            <span class="route"><b>SJC</b> San Jose to <b>DTW</b> Detroit, through <b>DEN</b> Denver</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Back</span>
+            <span class="when"><span class="day">Mon Nov 16</span><span class="time">9:40am</span></span>
+            <span class="route"><b>DTW</b> Detroit to <b>SJC</b> San Jose</span>
+          </div>
+          <p class="take"><strong>Five nights in Detroit.</strong> The only option with a stop and the only one out of San Jose. It uses the whole Nov 11-16 window.</p>
+        </div>
+        <div class="fare">
+          <span class="pp">$331</span>
+          <span class="lbl">per person, roundtrip</span>
+          <span class="two">$662<small>total for 2</small></span>
+        </div>
+      </article>
+
+      <article class="pass" id="opt3">
+        <div class="stub">
+          <span class="n">3</span>
+          <span class="air">Zipjet</span>
+          <span class="type">OAK to DTW</span>
+        </div>
+        <div class="legs">
+          <div class="badges">
+            <span class="b cheap">Cheapest</span>
+            <span class="b non">Nonstop</span>
+            <span class="b fee">Bags not included</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Out</span>
+            <span class="when"><span class="day">Thu Nov 12</span><span class="time">6:15am</span></span>
+            <span class="route"><b>OAK</b> Oakland to <b>DTW</b> Detroit</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Back</span>
+            <span class="when"><span class="day">Sun Nov 15</span><span class="time">5:30pm</span></span>
+            <span class="route"><b>DTW</b> Detroit to <b>OAK</b> Oakland</span>
+          </div>
+          <p class="take"><strong>Three nights in Detroit.</strong> Zipjet is a budget carrier and bags are not included, so add bag fees before comparing it with the others. We'd be home Sunday evening, a day before the rest.</p>
+        </div>
+        <div class="fare">
+          <span class="pp">$214</span>
+          <span class="lbl">per person, roundtrip</span>
+          <span class="two">$428<small>total for 2, before bags</small></span>
+        </div>
+      </article>
+
+      <article class="pass" id="opt4">
+        <div class="stub">
+          <span class="n">4</span>
+          <span class="air">SkyBridge</span>
+          <span class="type">SFO to DTW</span>
+        </div>
+        <div class="legs">
+          <div class="badges">
+            <span class="b non">Nonstop both ways</span>
+            <span class="b mile">Could use miles</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Out</span>
+            <span class="when"><span class="day">Fri Nov 13</span><span class="time">8:10am</span></span>
+            <span class="route"><b>SFO</b> San Francisco to <b>DTW</b> Detroit</span>
+          </div>
+          <div class="leg">
+            <span class="dir">Back</span>
+            <span class="when"><span class="day">Mon Nov 16</span><span class="time">8:15am</span></span>
+            <span class="route"><b>DTW</b> Detroit to <b>SFO</b> San Francisco</span>
+          </div>
+          <p class="take"><strong>Three nights in Detroit.</strong> Same return as option 1, one day later out. It costs $43 more per person ($86 more for two).</p>
+        </div>
+        <div class="fare">
+          <span class="pp">$529</span>
+          <span class="lbl">per person, roundtrip</span>
+          <span class="two">$1,058<small>total for 2</small></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="miles" id="miles" aria-labelledby="miles-h">
+  <div class="wrap">
+    <div>
+      <h2 id="miles-h">We both have SkyBridge miles</h2>
+      <p>That means options 1 and 4, the two SkyBridge nonstops, could be booked with miles instead of cash. I haven't looked up what they'd cost in miles yet, so there's no mileage number on this page.</p>
+    </div>
+    <div class="pillrow">
+      <a href="#opt1">Back to option 1</a>
+      <a href="#opt4">Back to option 4</a>
+    </div>
+  </div>
+</section>
+
+<section class="notes" aria-labelledby="notes-h">
+  <div class="wrap">
+    <h2 id="notes-h">What actually differs</h2>
+    <ul>
+      <li><b>Which airport</b><span>SFO for the two SkyBridge flights, SJC for Lakeshore, OAK for Zipjet. Pick the one that's easiest to get to.</span></li>
+      <li><b>Stops</b><span>Only Lakeshore (option 2) has one, in Denver. The other three are nonstop.</span></li>
+      <li><b>Bags</b><span>Zipjet does not include bags. The alert didn't say anything about bags on the other three, so check before booking.</span></li>
+      <li><b>Days in Detroit</b><span>Option 2 leaves Nov 11 and gets the most time. Option 3 gets us home Sunday evening, Nov 15. Options 1 and 4 both fly home Monday morning, Nov 16.</span></li>
+      <li><b>Cash vs miles</b><span>Options 1 and 4 could use SkyBridge miles. Options 2 and 3 are cash only.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Fares come from a FareHound alert and are per person, roundtrip. Totals are for 2 travelers.</p>
+    <p>Prices can change before booking, so confirm the fare at checkout.</p>
+  </div>
+</footer>
+
+</body>
+</html>
